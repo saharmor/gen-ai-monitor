@@ -1,0 +1,41 @@
+[
+    {
+        "name": "gpt-4",
+        "displayName": "GPT-4",
+        "lastChange": "Nov 6th, 2023",
+        "pricePer1kTokensInput": "0.01",
+        "pricePer1kTokensCompletion": "0.02",
+        "currency": "$",
+        "mmlu": "85%",
+        "chatArenaEloRanking": "1217"
+    },
+    {
+        "name": "claude-2.1",
+        "displayName": "Claude 2.1",
+        "lastChange": "Nov 20th, 2023",
+        "pricePer1kTokensInput": "0.01",
+        "pricePer1kTokensCompletion": "0.02",
+        "currency": "$",
+        "mmlu": "85%",
+        "chatArenaEloRanking": "1000"
+    },
+    {
+        "name": "gemini-pro",
+        "displayName": "Google Gemini",
+        "lastChange": "Nov 20th, 2023",
+        "pricePer1kTokensInput": "0.01",
+        "pricePer1kTokensCompletion": "0.02",
+        "currency": "$",
+        "mmlu": "85%",
+        "chatArenaEloRanking": "1100"
+    },
+    {
+        "name": "gemini-ultra",
+        "lastChange": "Nov 20th, 2023",
+        "pricePer1kTokensInput": "0.01",
+        "pricePer1kTokensCompletion": "0.02",
+        "currency": "$",
+        "mmlu": "85%",
+        "chatArenaEloRanking": "1100"
+    }
+]
