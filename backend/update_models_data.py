@@ -4,10 +4,7 @@ import json
 import os
 from litellm import completion
 
-from backend.frontend_data_adapter import INPUT_PROMPT, MODELS_TO_TEST, TEMP_REPORTS_DIR
-
-
-
+from frontend_data_adapter import INPUT_PROMPT, MODELS_TO_TEST, TEMP_REPORTS_DIR
 
 FIXED_TEMPERATURE = 0.2
 FIXED_MAX_TOKENS = 512
