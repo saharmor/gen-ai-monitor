@@ -17,7 +17,7 @@ const ModelsGallery = ({ modelsData, inputPromptTokenCount }) => {
             {chunkedModelsData.map((modelGroup, index) => (
                 <div key={index} className="flex flex-wrap -mx-4 mb-4">
                     {modelGroup.map((model) => {
-                        const modelName = model.name;
+                        const modelName = model.displayName;
                         const inputPromptCost = inputPromptTokenCount * parseFloat(model.pricePer1kTokensInput) / 1000;
                         const outputGenerationCost = model.pricePer1kTokensCompletion * parseFloat(model.generatedCompletionTokenCount) / 1000;
                         const totalCost = inputPromptCost + outputGenerationCost;

@@ -6,20 +6,22 @@ import os
 
 INPUT_PROMPT = "What's the weather in SF"
 LAST_UPDATE = "Dec 14th, 2023"
-TEMP_REPORTS_DIR = "backend/temp_model_reports"
+
+script_dir = os.path.dirname(os.path.abspath(__file__))
+TEMP_REPORTS_DIR = os.path.join(script_dir, 'temp_model_reports')
 
 # https://docs.litellm.ai/docs/providers
 MODELS_TO_TEST = [
     # "gpt-3.5-turbo",
     # "gpt-4-1106-preview",
     "gpt-4",
-    # "claude-2.1"
+    "claude-2.1"
 ]
 
 
 def get_model_static_data(model_name: str):
     models_static_data = json.load(
-        open('backend/models_static_data.json', 'r'))
+        open('models_static_data.json', 'r'))
     for model in models_static_data:
         if model['name'] == model_name:
             return model
@@ -61,8 +63,14 @@ def enrich_models_report_with_static_data(updated_models_data: Dict):
         static_model_data = get_model_static_data(model_data['modelName'])
         model_reports.append(populate_frontend_json_model(
             model_data, static_model_data))
-
+        
     overall_report = populate_frontend_json_overall(model_reports)
     today = date.today().strftime("%Y-%m-%d")
     with open(f'{TEMP_REPORTS_DIR}/overall_report_{today}.json', 'w') as outfile:
         json.dump(overall_report, outfile)
+
+    # override the current overall_report.json with the latest report
+    with open('{TEMP_REPORTS_DIR}/overall_report.json', 'w') as outfile:
+        json.dump(overall_report, outfile)
+
+    return overall_report
